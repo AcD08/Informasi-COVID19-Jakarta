@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="id" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Open Graph Protocol-->
+   <meta property="og:title" content="COVID19Jakarta - Informasi COVID-19 Jakarta">
+   <meta property="og:type" content="website">
+   <meta property="og:description" content="Informasi COVID-19 Jakarta">
+   <meta property="og:url" content="covid19jakarta.netlify.app">
+   <meta property="og:image" content="https://covid19jakarta.netlify.app">
+   <meta property="og:site_name" content="Informasi COVID-19 Jakarta">
+    <!-- End Open Graph Protocol-->
+    <title>Data - Informasi COVID-19 Jakarta</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cuprum&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/style.css">
+
+    <!-- <link href="main.js"> -->
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-dark primary-color">
+      <div class="container">
+        <a class="navbar-brand" href="#">
+      <img src="img/mask.png" width="60" height="60" class="d-inline-block mr-2" alt="">COVID19 Jakarta
+    </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nvbCollapse" aria-controls="nvbCollapse">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="nvbCollapse">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item pl-1">
+            <a class="nav-link" href="index.html">Beranda</a>
+          </li>
+            <li class="nav-item active pl-1">
+              <a class="nav-link" href="data.html">Data</a>
+            </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+    </header>
+    <!-- <div class="jumbotron">
+    <img src="img/mask.png" alt="Mask" class="mr2">
+    <h2>Informasi COVID-19 Jakarta</h2>
+    </div> -->
+    <div class="container-fluid p-0">
+      <div class="gradient">
+        <div class="row m-0">
+          <div class="col-sm-12 text-center">
+            <h1 style="margin-top:80px; color: white;"><strong>Informasi COVID-19 Jakarta</strong></h1>
+          </div>
+        </div>
+        <div class="row m-0">
+          <div class="col-sm-12 text-center">
+            <h3 style="margin-top:10px; color: white;">Pendataan COVID19 Di Jakarta</h3>
+          </div>
+        </div>
+    </div>
+  </div>
+  <div class="d-flex justify-content-center align-items-center pb-4 loading" id="loading">
+  <div class="spinner-border z-index-0 loading" role="status">
+  </div>
+  </div>
+  <section class="data" id="data">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-lg-12 col-sm-12">
+          <h6 style="color: #b3aeb5; font-size: 10px;">*Last Update: <span id="date">1</span></h6>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="card text-white bg-dark col-12 col-xs-12 col-lg-3 col-sm-12" style="max-width: 17rem;" id="card1">
+  <div class="card-header" id="NasionalPositif"></div>
+  <div class="card-body">
+    <h5 class="card-title">Data Positif (Nasional)</h5>
+  </div>
+</div>
+<div class="card text-white bg-dark col-12 col-xs-12 col-lg-3 col-sm-12 ml-2" style="max-width: 17rem; background: #024685!important;" id="card2">
+<div class="card-header" id="NasionalPerawatan"></div>
+<div class="card-body">
+<h5 class="card-title">Data Dalam Perawatan (Nasional)</h5>
+</div>
+</div>
+<div class="card text-white bg-dark col-12 col-xs-12 col-lg-3 col-sm-12 ml-3" style="max-width: 17rem; background: #008000!important;" id="card3">
+<div class="card-header" id="NasionalSembuh"></div>
+<div class="card-body">
+<h5 class="card-title">Data Sembuh (Nasional)</h5>
+</div>
+</div>
+<div class="card text-white bg-dark col-12 col-xs-12 col-lg-3 col-sm-12 ml-3" style="max-width: 17rem; background: #9f0000!important;" id="card4">
+<div class="card-header" id="NasionalMeninggal"></div>
+<div class="card-body">
+<h5 class="card-title">Data Meninggal (Nasional)</h5>
+</div>
+</div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-lg-12 col-sm-12 mt-5">
+          <h1>Data COVID19 Jakarta</h1>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+          <div class="row">
+            <div class="col-12 col-lg-12 col-sm-12 mt-3">
+              <ul class="nav nav-tabs" id="myTab" role="tablist">
+              <li class="nav-item" role="presentation">
+                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Keseluruhan</a>
+              </li>
+              <li class="nav-item" role="presentation">
+                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Berdasarkan Jenis Kelamin</a>
+              </li>
+              <li class="nav-item" role="presentation">
+                <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Berdasarkan Umur</a>
+              </li>
+            </ul>
+            <div class="tab-content" id="myTabContent">
+              <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+              <div class="chart-container">
+                <canvas id="myChart"></canvas>
+              </div>
+              </div>
+              <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                <div class="chart-container">
+                  <canvas id="myChart2"></canvas>
+                </div>
+              </div>
+              <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+                <div class="chart-container">
+                  <canvas id="myChart3"></canvas>
+                </div>
+              </div>
+            </div>
+            </div>
+          </div>
+        </div>
+        <br><br><br>
+  </section>
+
+  <!-- Site footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 col-md-6">
+          <h6>Tentang</h6>
+          <p class="text-justify">COVID19Jakarta adalah sebuah situs web yang menyediakan informasi mengenai COVID-19. Selain itu, situs web ini juga dibuat untuk mengembangkan kemampuan kedua developer situs web ini; Axel C (Front-End) & Franklin T (Back-End). </p>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 col-sm-6 col-xs-12">
+          <p class="copyright-text">&copy; 2020 <a href="https://www.linkedin.com/in/axel-christopher-960943185/">Axel C</a> & <a href="https://www.linkedin.com/in/franklin-tamboto-294b23147/">Franklin T.</a> Made with <i class="fa fa-heart" aria-hidden="true"></i> from Jakarta.
+          </p>
+        </div>
+
+        <!-- <div class="col-md-4 col-sm-6 col-xs-12">
+          <ul class="social-icons">
+            <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+            <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+            <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
+          </ul>
+        </div> -->
+      </div>
+    </div>
+</footer>
+  </body>
+  <!--Javascript-->
+  <!-- Dependency -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+  <script>
+var today = new Date();
+var date = today.getDate()+'-'+(today.getMonth()+1)+'-'+today.getFullYear();
+document.getElementById('date').innerHTML = date;
+</script>
+
+  <!-- Custom -->
+  <script src="assets/myChart.js"></script>
+  <script src="assets/myChart2.js"></script>
+  <script src="assets/myChart3.js"></script>
+  <script src="assets/MyData.js"></script>
+  <script src="assets/chartInitiator.js"></script>
+
+</html>
